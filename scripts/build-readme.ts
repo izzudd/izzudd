@@ -1,13 +1,13 @@
 #!/usr/bin/env bun
 /**
- * Generates README.md from content/ — the same files the site renders.
+ * Generates README.md from content/, the same files the site renders.
  *
  *   bun run readme          # write README.md
  *   bun run readme:check    # exit 1 if README.md is stale (used in CI)
  *
  * Nothing here talks to the network or to Nuxt: it reads frontmatter from the
  * Markdown files and prints Markdown. Keep the layout readable on GitHub, not a
- * copy of the site — GitHub renders no JavaScript.
+ * copy of the site, because GitHub renders no JavaScript.
  */
 import { readFileSync, readdirSync, writeFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
@@ -80,7 +80,7 @@ out.push(contactRow.join(' · '), '')
 if (skills.length) {
   out.push('## What I do', '')
   out.push(
-    skills.map((s) => `**${s.data.stage} ${s.data.title}**`).join(' → ') + ' — end to end, with evidence below.',
+    skills.map((s) => `**${s.data.stage} ${s.data.title}**`).join(', ') + ', end to end, with evidence below.',
     ''
   )
 }
@@ -123,7 +123,7 @@ if (listed.length) {
 if (writing.length) {
   out.push('## Writing', '')
   for (const article of writing.slice(0, 6)) {
-    out.push(`- [${article.data.title}](${article.data.href}) — ${article.data.outlet}`)
+    out.push(`- [${article.data.title}](${article.data.href}) · ${article.data.outlet}`)
   }
   out.push('')
 }
@@ -132,7 +132,7 @@ if (testimonials.length) {
   out.push('## Testimonials', '')
   for (const item of testimonials) {
     const quote = item.body.replace(/\s+/g, ' ').trim()
-    out.push(`> ${quote}`, `>`, `> — **${item.data.name}**, ${item.data.title}${item.data.company ? ` at ${item.data.company}` : ''}`, '')
+    out.push(`> ${quote}`, `>`, `> **${item.data.name}**, ${item.data.title}${item.data.company ? ` at ${item.data.company}` : ''}`, '')
   }
 }
 

@@ -5,5 +5,5 @@ href: 'https://www.invasikode.com/buat-powershell-lebih-berwarna-dengan-starship
 order: 4
 featured: false
 description: >-
-  Memasang Starship prompt untuk PowerShell dan merapikan environment terminal sehari-hari.
+  Installing the Starship prompt for PowerShell and tidying up the terminal environment.
 ---

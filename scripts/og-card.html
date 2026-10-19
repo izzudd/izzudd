@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>OG card</title>
+    <!--
+      Source for public/og.png. Screenshot this file at exactly 1200x630:
+        chrome --headless --screenshot=public/og.png --window-size=1200,630 scripts/og-card.html
+      Fonts are the same woff2 files the site ships (@fontsource), so the card and
+      the page share a typeface instead of approximating one with a system font.
+    -->
+    <style>
+      @font-face {
+        font-family: 'Space Grotesk';
+        font-weight: 500;
+        src: url('../node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-500-normal.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Space Grotesk';
+        font-weight: 700;
+        src: url('../node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-700-normal.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'JetBrains Mono';
+        font-weight: 400;
+        src: url('../node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2') format('woff2');
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+      }
+
+      body {
+        background: #e7e5e4;
+        color: #0a0a0a;
+        font-family: 'Space Grotesk', sans-serif;
+        border: 12px solid #0a0a0a;
+        padding: 64px 72px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .label {
+        font-size: 26px;
+        font-weight: 500;
+        color: #626261;
+      }
+
+      h1 {
+        margin-top: 18px;
+        font-size: 128px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 0.94;
+      }
+
+      .rule {
+        margin-top: 34px;
+        width: 460px;
+        height: 12px;
+        background: #f59e0b;
+      }
+
+      p.tagline {
+        margin-top: 34px;
+        max-width: 900px;
+        font-size: 34px;
+        line-height: 1.25;
+      }
+
+      .foot {
+        margin-top: auto;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        border-top: 3px solid #0a0a0a;
+        padding-top: 18px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 22px;
+        color: #4c4c4b;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="label">AI Engineer, Malang, Indonesia</p>
+    <h1>Daffa Izzuddin</h1>
+    <div class="rule"></div>
+    <p class="tagline">
+      I take models from a training run to something people can actually use: train, serve, monitor,
+      iterate.
+    </p>
+    <div class="foot">
+      <span>me.izzudd.my.id</span>
+      <span>CV and build notes on the site</span>
+    </div>
+  </body>
+</html>

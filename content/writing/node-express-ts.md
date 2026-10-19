@@ -5,5 +5,5 @@ href: 'https://www.invasikode.com/menggunakan-typescript-dengan-node-js-dan-expr
 order: 3
 featured: false
 description: >-
-  Setup Node + Express dengan TypeScript dari nol, termasuk konfigurasi build dan type checking.
+  Setting up Node and Express with TypeScript from scratch, including the build config and type checking.
 ---

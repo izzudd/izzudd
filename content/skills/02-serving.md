@@ -22,6 +22,3 @@ tools:
   - { name: Docker, icon: 'simple-icons:docker' }
   - { name: Cloudflare, icon: 'simple-icons:cloudflare' }
 ---
-
-<!-- TODO Daffa: kalau ada angka latency/cost nyata, sebut di sini — ini bagian yang paling
-     dicari untuk role AI engineer. -->

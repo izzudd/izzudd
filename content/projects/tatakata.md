@@ -1,10 +1,9 @@
 ---
 title: TataKata
-tagline: An Indonesian text corrector for EYD and KBBI rules — grammar checking for Bahasa Indonesia.
+tagline: 'Grammar checking for Bahasa Indonesia, built on EYD and KBBI rules.'
 order: 4
 featured: false
 role: Solo
-timeframe: TODO tahun
 tags: [AI, NLP, Writing]
 stack: [nuxt, postgresql, python]
 pipelineStage: [Model]
@@ -25,9 +24,3 @@ non-standard words, affixes, and punctuation that EYD cares about.
 - **Model second**: only send the sentences that rules cannot resolve to a language model, because
   it is slower and less predictable.
 - **Feedback loop**: every accepted correction is stored so the rule set and the model improve.
-
-## Status
-
-<!-- TODO Daffa: apa yang sudah jalan, apa yang belum, dan kapan mau dilanjutkan. Kalau proyek ini
-     masih setengah, lebih baik ditulis jujur daripada disembunyikan — kandidat yang tahu batas
-     proyeknya sendiri terdengar lebih senior. -->

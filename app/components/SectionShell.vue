@@ -2,14 +2,13 @@
 const props = withDefaults(
   defineProps<{
     id: string
-    index: string
     title: string
     subtitle?: string
     defaultOpen?: boolean
   }>(),
   {
-    // Sections are open on first paint so the prerendered HTML contains the
-    // content (crawlers, no-JS). The user's last choice takes over on mount.
+    // Open on first paint so the prerendered HTML carries the content for
+    // crawlers and no-JS visitors. A saved choice takes over on mount.
     defaultOpen: true,
   }
 )
@@ -18,7 +17,6 @@ const details = ref<HTMLDetailsElement>()
 const storageKey = `section-open:${props.id}`
 
 onMounted(() => {
-  // Restore the last state, after hydration so the SSR markup stays indexable.
   const saved = localStorage.getItem(storageKey)
   if (saved !== null && details.value) details.value.open = saved === '1'
 })
@@ -30,29 +28,23 @@ function onToggle(event: Event) {
 </script>
 
 <template>
-  <section :id="id" class="border-b-4 border-ink">
-    <details ref="details" :open="props.defaultOpen" @toggle="onToggle">
-      <summary
-        class="group flex items-center gap-4 px-4 py-6 transition-colors hover:bg-paper-2 sm:px-6"
-      >
-        <span class="border-2 border-ink bg-ink px-2 py-0.5 font-mono text-xs font-bold text-paper">
-          {{ index }}
+  <section :id="id" class="border-t-2 border-ink">
+    <details ref="details" :open="props.defaultOpen" @toggle="onToggle" class="group">
+      <summary class="flex items-baseline gap-4 px-4 py-6 hover:bg-paper-2/70 sm:px-6">
+        <span class="flex min-w-0 flex-1 flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+          <h2 class="text-2xl font-bold tracking-[-0.02em] sm:text-3xl">{{ title }}</h2>
+          <span v-if="subtitle" class="text-sm text-ink/60 sm:max-w-sm sm:text-right">{{ subtitle }}</span>
         </span>
-        <h2 class="font-mono text-2xl font-bold tracking-tight sm:text-3xl">{{ title }}</h2>
-        <span
-          v-if="subtitle"
-          class="hidden font-mono text-xs text-ink/70 sm:block sm:max-w-md"
-        >{{ subtitle }}</span>
-        <span
-          class="ml-auto flex h-8 w-8 shrink-0 items-center justify-center border-2 border-ink bg-canvas font-mono text-base leading-none transition-transform duration-200 group-open:rotate-180"
-          aria-hidden="true"
-        >▾</span>
+        <span class="flex h-6 w-6 shrink-0 items-center justify-center text-xl leading-none" aria-hidden="true">
+          <span class="group-open:hidden">+</span>
+          <span class="hidden group-open:inline">−</span>
+        </span>
         <span class="sr-only">Toggle {{ title }}</span>
       </summary>
 
       <div class="section-body">
         <div>
-          <div class="px-4 pb-10 sm:px-6">
+          <div class="max-w-5xl px-4 pb-12 sm:px-6">
             <slot />
           </div>
         </div>

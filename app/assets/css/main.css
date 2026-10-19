@@ -8,23 +8,13 @@
   --color-paper: #e7e5e4;
   --color-paper-2: #d6d3d1;
   --color-canvas: #fafaf9;
-
-  --color-accent-amber: #f59e0b;
-  --color-accent-emerald: #10b981;
-  --color-accent-sky: #0ea5e9;
-  --color-accent-lime: #84cc16;
-  --color-accent-fuchsia: #d946ef;
-  --color-accent-orange: #f97316;
-
-  --shadow-brutal: 8px 8px 0 0 var(--color-ink);
-  --shadow-brutal-sm: 4px 4px 0 0 var(--color-ink);
-  --shadow-brutal-lg: 12px 12px 0 0 var(--color-ink);
+  --color-accent: #f59e0b;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 4.5rem;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -41,73 +31,146 @@
   }
 
   ::selection {
-    background: var(--color-accent-lime);
+    background: var(--color-accent);
     color: var(--color-ink);
   }
 
   :focus-visible {
-    outline: 4px solid var(--color-accent-sky);
-    outline-offset: 2px;
+    outline: 3px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+
+  details > summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  details > summary::-webkit-details-marker {
+    display: none;
   }
 }
 
-@layer components {
-  .frame {
-    @apply border-4 border-ink;
+/* Three primitives, written as plain CSS so a Tailwind upgrade cannot change
+   how the site behaves. Everything else is utilities in the components. */
+.card {
+  border: 2px solid var(--color-ink);
+  background: var(--color-canvas);
+}
+
+.card-link {
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.card-link:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 0 var(--color-ink);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.6rem 1.1rem;
+  border: 2px solid var(--color-ink);
+  background: var(--color-canvas);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.1;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 0 var(--color-ink);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-link,
+  .btn {
+    transition: none;
   }
 
-  .card-brutal {
-    @apply border-4 border-ink bg-canvas shadow-brutal transition-[transform,box-shadow] duration-150;
-  }
-
-  .card-brutal-hover:hover {
-    @apply -translate-x-1 -translate-y-1 shadow-brutal-lg;
-  }
-
-  .tag {
-    @apply inline-flex items-center border-2 border-ink px-2 py-0.5 font-mono text-xs uppercase tracking-wide;
-  }
-
-  .btn-brutal {
-    @apply inline-flex items-center gap-2 border-4 border-ink bg-canvas px-5 py-3 font-mono text-sm font-bold uppercase tracking-wide shadow-brutal-sm transition-[transform,box-shadow] duration-150;
-  }
-
-  .btn-brutal:hover {
-    @apply -translate-x-0.5 -translate-y-0.5 shadow-brutal;
-  }
-
-  .prose-brutal {
-    @apply text-base leading-relaxed;
-  }
-
-  .prose-brutal :where(p) {
-    @apply mb-4;
-  }
-
-  .prose-brutal :where(ul) {
-    @apply mb-4 list-disc space-y-1 pl-5;
-  }
-
-  .prose-brutal :where(h2, h3) {
-    @apply mt-6 mb-2 font-mono font-bold;
-  }
-
-  .prose-brutal :where(code) {
-    @apply border-2 border-ink bg-paper-2 px-1 font-mono text-sm;
-  }
-
-  .prose-brutal :where(a) {
-    @apply underline decoration-4 underline-offset-2;
+  .card-link:hover,
+  .btn:hover {
+    transform: none;
+    box-shadow: none;
   }
 }
 
-/* Reveal-on-scroll: only client-side, and disabled for reduced motion. */
+/* Mono is reserved for machine strings (stack, dates, stage numbers). */
+.tech {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--color-ink) 70%, var(--color-paper));
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: color-mix(in srgb, var(--color-ink) 60%, var(--color-paper));
+}
+
+.prose-ledger {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.prose-ledger :where(p) {
+  margin-bottom: 1rem;
+}
+
+.prose-ledger :where(p:last-child) {
+  margin-bottom: 0;
+}
+
+.prose-ledger :where(ul) {
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.prose-ledger :where(li) {
+  margin-bottom: 0.35rem;
+}
+
+.prose-ledger :where(h2, h3) {
+  margin: 1.5rem 0 0.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.prose-ledger :where(code) {
+  padding: 0 0.25rem;
+  border: 1px solid var(--color-ink);
+  background: var(--color-paper-2);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+.prose-ledger :where(a) {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Reveal-on-scroll: client only, and inert for reduced motion. */
 .reveal {
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(8px);
   transition:
-    opacity 0.35s ease-out,
-    transform 0.35s ease-out;
+    opacity 220ms ease-out,
+    transform 220ms ease-out;
   transition-delay: var(--reveal-delay, 0ms);
 }
 
@@ -124,7 +187,6 @@
   }
 }
 
-/* Printing (Ctrl+P / "Save as PDF") must never drop un-revealed content. */
 @media print {
   .reveal {
     opacity: 1 !important;
@@ -132,11 +194,11 @@
   }
 }
 
-/* Collapsible sections: <details> + grid-rows animation. */
+/* Collapsible sections: <details> plus a grid-rows height animation. */
 .section-body {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.3s ease;
+  transition: grid-template-rows 260ms ease;
 }
 
 details[open] > .section-body {
@@ -145,15 +207,6 @@ details[open] > .section-body {
 
 .section-body > div {
   overflow: hidden;
-}
-
-details > summary {
-  list-style: none;
-  cursor: pointer;
-}
-
-details > summary::-webkit-details-marker {
-  display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -165,27 +218,26 @@ details > summary::-webkit-details-marker {
 /* Project dialog */
 dialog.project-dialog {
   padding: 0;
-  border: 4px solid var(--color-ink);
+  border: 2px solid var(--color-ink);
   background: var(--color-canvas);
   color: var(--color-ink);
-  max-width: min(46rem, calc(100vw - 2rem));
+  max-width: min(44rem, calc(100vw - 2rem));
   max-height: calc(100dvh - 2rem);
-  box-shadow: var(--shadow-brutal-lg);
+  box-shadow: 8px 8px 0 0 var(--color-ink);
 }
 
 dialog.project-dialog::backdrop {
-  background: rgb(10 10 10 / 0.55);
-  backdrop-filter: blur(2px);
+  background: rgb(10 10 10 / 0.6);
 }
 
 dialog.project-dialog[open] {
-  animation: dialog-in 0.18s ease-out;
+  animation: dialog-in 150ms ease-out;
 }
 
 @keyframes dialog-in {
   from {
     opacity: 0;
-    transform: scale(0.97) translateY(6px);
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
@@ -208,8 +260,8 @@ dialog.project-dialog[open] {
     background: white;
   }
 
-  .card-brutal,
-  .frame {
+  .card,
+  dialog.project-dialog {
     box-shadow: none !important;
     break-inside: avoid;
   }

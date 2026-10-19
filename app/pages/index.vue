@@ -68,14 +68,14 @@ onBeforeUnmount(() => {
 })
 
 useHead({
-  title: 'Daffa Izzuddin — AI Engineer',
+  title: 'Daffa Izzuddin · AI Engineer',
   meta: [
     {
       name: 'description',
       content:
-        'AI engineer in Malang, Indonesia. Model development, inference and serving, monitoring and iteration — plus the product around it.',
+        'AI engineer in Malang, Indonesia. Model development, inference and serving, monitoring and iteration, plus the product around it.',
     },
-    { property: 'og:title', content: 'Daffa Izzuddin — AI Engineer' },
+    { property: 'og:title', content: 'Daffa Izzuddin · AI Engineer' },
     {
       property: 'og:description',
       content:
@@ -86,7 +86,7 @@ useHead({
     { property: 'og:image', content: 'https://me.izzudd.my.id/og.png' },
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },
-    { property: 'og:image:alt', content: 'Daffa Izzuddin — AI Engineer' },
+    { property: 'og:image:alt', content: 'Daffa Izzuddin, AI Engineer' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:image', content: 'https://me.izzudd.my.id/og.png' },
   ],
@@ -125,47 +125,43 @@ useHead({
         :tagline="profile.tagline"
         :location="profile.location"
         :availability="profile.availability"
-        :focus="profile.focus"
         :links="profile.links"
         :email="profile.email"
         :currently="currently"
       >
         <template #intro>
-          <div class="text-sm leading-relaxed">
-            <ContentRenderer :value="profile" />
-          </div>
+          <ContentRenderer :value="profile" />
         </template>
       </HeroSection>
 
-      <PipelineStrip :stages="stages ?? []" />
-
       <SectionShell
         id="experience"
-        index="01"
         title="Experience"
-        subtitle="Where I have shipped models and the systems around them"
+        subtitle="Roles, dates, and the systems I owned"
       >
         <ExperienceTimeline :entries="experience ?? []" />
       </SectionShell>
 
       <SectionShell
         id="projects"
-        index="02"
         title="Projects"
-        subtitle="Click a card for the technical detail"
+        subtitle="Each card opens the build notes"
       >
         <ProjectsGrid :projects="projectItems" @open="openProject" />
       </SectionShell>
 
-      <SectionShell id="skills" index="03" title="Skills" subtitle="Grouped by the ML lifecycle, each with evidence">
+      <SectionShell
+        id="skills"
+        title="Skills"
+        subtitle="The four stages I own, each tied to something I shipped"
+      >
         <SkillsSection :stages="stages ?? []" />
       </SectionShell>
 
       <SectionShell
         id="writing"
-        index="04"
         title="Writing"
-        subtitle="Selected posts · 100+ articles, ~1k readers weekly at invasikode.com"
+        subtitle="Long-form posts at invasikode.com, mostly in Indonesian"
       >
         <WritingSection :articles="articles ?? []" />
       </SectionShell>
@@ -173,14 +169,18 @@ useHead({
       <SectionShell
         v-if="(testimonials?.length ?? 0) > 0"
         id="testimonials"
-        index="05"
         title="Testimonials"
         subtitle="What people I worked with say"
       >
         <TestimonialsSection :testimonials="testimonials ?? []" />
       </SectionShell>
 
-      <ContactSection :email="profile.email" :links="profile.links" :availability="profile.availability" />
+      <ContactSection
+        :email="profile.email"
+        :links="profile.links"
+        :availability="profile.availability"
+        :location="profile.location"
+      />
     </main>
 
     <ProjectDialog :project="activeProject" @close="closeProject" />

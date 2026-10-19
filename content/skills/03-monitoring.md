@@ -19,7 +19,3 @@ tools:
   - { name: Grafana, icon: 'simple-icons:grafana' }
   - { name: GitHub Actions, icon: 'simple-icons:githubactions' }
 ---
-
-<!-- TODO Daffa: ini section yang paling perlu bukti. Kalau di Rains/Mayfeyr kamu pernah pasang
-     metrics, alert, atau eval rutin, tulis di sini dan tautkan. Kalau belum, jujur tulis apa yang
-     sedang kamu bangun — jangan diklaim sudah ada. -->

@@ -1,16 +1,16 @@
 # Daffa Izzuddin
 
-**AI Engineer** · Malang, Indonesia · UTC+7
+**AI Engineer** · Malang, Indonesia (UTC+7)
 
-> I take models from a training run to something people can actually use — train, serve, monitor, iterate.
+> I take models from a training run to something people can actually use: train, serve, monitor, iterate.
 
-`Open to AI engineering roles — remote, full-time`
+`Open to AI engineering roles, remote and full time`
 
 [Portfolio](https://me.izzudd.my.id) · [CV](https://me.izzudd.my.id/cv) · [GitHub](https://github.com/izzudd) · [LinkedIn](https://www.linkedin.com/in/daffa-izzuddin/) · [Writing](https://www.invasikode.com) · [Email](mailto:halo@izzudd.my.id)
 
 ## What I do
 
-**01 Data & Modeling** → **02 Serving & Inference** → **03 Monitoring & Iteration** → **04 Product Delivery** — end to end, with evidence below.
+**01 Data & Modeling**, **02 Serving & Inference**, **03 Monitoring & Iteration**, **04 Product Delivery**, end to end, with evidence below.
 
 ## Experience
 
@@ -24,7 +24,7 @@
 
 ### [GenBatik](https://batik.izzudd.my.id)
 
-Text-to-image generation for batik patterns — a diffusion model wrapped in a real product.
+Text-to-image generation for batik patterns: a diffusion model wrapped in a real product.
 
 <sub>Stack: python, pytorch, huggingface, nuxt, websocket · [live](https://batik.izzudd.my.id)</sub>
 
@@ -42,10 +42,10 @@ Face-embedding authentication exposed as a small, boring REST API.
 
 ## Writing
 
-- [React, Vue, Angular, what to Decide?](https://www.invasikode.com/react-angular-vue-pilih-framework-yang-mana) — Invasikode
-- [What's Up Javascript? SoJS 2022](https://www.invasikode.com/apa-kabar-javascript-rilis-state-of-js-2022) — Invasikode
-- [Guide: Using Node and Express with TypeScript](https://www.invasikode.com/menggunakan-typescript-dengan-node-js-dan-express) — Invasikode
-- [Make CMD-ing Fun Again with Starship](https://www.invasikode.com/buat-powershell-lebih-berwarna-dengan-starship) — Invasikode
+- [React, Vue, Angular, what to Decide?](https://www.invasikode.com/react-angular-vue-pilih-framework-yang-mana) · Invasikode
+- [What's Up Javascript? SoJS 2022](https://www.invasikode.com/apa-kabar-javascript-rilis-state-of-js-2022) · Invasikode
+- [Guide: Using Node and Express with TypeScript](https://www.invasikode.com/menggunakan-typescript-dengan-node-js-dan-express) · Invasikode
+- [Make CMD-ing Fun Again with Starship](https://www.invasikode.com/buat-powershell-lebih-berwarna-dengan-starship) · Invasikode
 
 ---
 

@@ -69,72 +69,65 @@ onBeforeUnmount(restorePage)
 <template>
   <dialog ref="dialog" class="project-dialog w-full" @cancel="onCancel" @close="onNativeClose" @click="onClick">
     <div v-if="project" class="max-h-[calc(100dvh-2rem)] overflow-y-auto">
-      <header class="sticky top-0 z-10 flex items-start gap-3 border-b-4 border-ink bg-canvas px-5 py-4">
+      <header class="sticky top-0 z-10 flex items-start gap-4 border-b-2 border-ink bg-canvas px-5 py-4">
         <div>
-          <h2 class="font-mono text-2xl font-bold leading-tight">{{ project.title }}</h2>
-          <p class="mt-1 font-mono text-xs uppercase tracking-wide text-ink/70">
+          <h2 class="text-2xl font-bold leading-tight tracking-[-0.02em]">{{ project.title }}</h2>
+          <p class="mt-1 text-xs text-ink/60">
             <template v-if="project.role">{{ project.role }}</template>
             <template v-if="project.role && project.timeframe"> · </template>
             <template v-if="project.timeframe">{{ project.timeframe }}</template>
             <template v-if="project.status"> · {{ project.status }}</template>
           </p>
         </div>
-        <button
-          type="button"
-          class="ml-auto flex h-9 w-9 shrink-0 items-center justify-center border-2 border-ink bg-accent-fuchsia/30 font-mono text-lg leading-none hover:bg-accent-fuchsia/60"
-          aria-label="Close details"
-          @click="close"
-        >
-          ✕
+        <button type="button" class="btn ml-auto px-3 py-1.5 text-xs" aria-label="Close details" @click="close">
+          Close
         </button>
       </header>
 
       <div class="px-5 py-5">
-        <div class="flex flex-wrap gap-1.5">
-          <span v-for="tag in project.tags" :key="tag" class="tag bg-paper-2">{{ tag }}</span>
-        </div>
+        <p v-if="project.tags?.length" class="tech">{{ project.tags.join(', ') }}</p>
+        <p v-if="project.pipelineStage?.length" class="tech mt-1">
+          Pipeline: {{ project.pipelineStage.join(', ') }}
+        </p>
 
-        <dl v-if="project.metrics?.length" class="mt-4 grid gap-2 sm:grid-cols-3">
-          <div v-for="metric in project.metrics" :key="metric.label" class="border-2 border-ink bg-paper p-3">
-            <dt class="font-mono text-[10px] uppercase tracking-wider text-ink/70">{{ metric.label }}</dt>
-            <dd class="font-mono text-lg font-bold">{{ metric.value }}</dd>
+        <dl v-if="project.metrics?.length" class="mt-4 grid gap-3 border-t-2 border-ink/15 pt-3 sm:grid-cols-3">
+          <div v-for="metric in project.metrics" :key="metric.label">
+            <dt class="label">{{ metric.label }}</dt>
+            <dd class="tech text-base font-bold">{{ metric.value }}</dd>
           </div>
         </dl>
 
-        <div v-if="project.body" class="prose-brutal mt-5">
+        <div v-if="project.body" class="prose-ledger mt-5">
           <ContentRenderer :value="project" />
         </div>
 
-        <div v-if="project.stack?.length" class="mt-6">
-          <p class="font-mono text-xs uppercase tracking-widest text-ink/70">Stack</p>
-          <div class="mt-2 flex flex-wrap gap-1.5">
-            <span v-for="tech in project.stack" :key="tech" class="tag bg-canvas">{{ tech }}</span>
-          </div>
+        <div v-if="project.stack?.length" class="mt-6 border-t-2 border-ink/15 pt-4">
+          <p class="label">Stack</p>
+          <p class="tech mt-1">{{ project.stack.join(', ') }}</p>
         </div>
 
-        <div class="mt-6 flex flex-wrap gap-3 border-t-4 border-ink pt-5">
+        <div v-if="project.links?.live || project.links?.repo || project.links?.paper" class="mt-6 flex flex-wrap gap-3 border-t-2 border-ink pt-5">
           <a
             v-if="project.links?.live"
             :href="project.links.live"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-brutal bg-accent-lime"
-          >Live site ↗</a>
+            class="btn btn-primary"
+          >Live site</a>
           <a
             v-if="project.links?.repo"
             :href="project.links.repo"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-brutal"
-          >Source ↗</a>
+            class="btn"
+          >Source</a>
           <a
             v-if="project.links?.paper"
             :href="project.links.paper"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-brutal"
-          >Write-up ↗</a>
-          <button type="button" class="btn-brutal ml-auto" @click="close">Close</button>
+            class="btn"
+          >Write-up</a>
         </div>
       </div>
     </div>

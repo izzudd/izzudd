@@ -19,14 +19,14 @@ const hasTestimonials = computed(() => (props.testimonials?.length ?? 0) > 0)
       v-for="(item, index) in testimonials"
       :key="item.path"
       v-reveal="index * 60"
-      class="card-brutal flex flex-col p-5"
+      class="card flex flex-col p-5"
     >
-      <blockquote class="prose-brutal text-[15px] leading-relaxed">
+      <blockquote class="prose-ledger text-[15px]">
         <ContentRenderer :value="item" />
       </blockquote>
       <figcaption class="mt-4 border-t-2 border-ink pt-3">
-        <p class="font-mono text-sm font-bold">{{ item.name }}</p>
-        <p class="font-mono text-xs text-ink/70">
+        <p class="text-sm font-bold">{{ item.name }}</p>
+        <p class="text-xs text-ink/60">
           {{ item.title }}<template v-if="item.company">, {{ item.company }}</template>
           <template v-if="item.relation"> · {{ item.relation }}</template>
         </p>

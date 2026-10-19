@@ -12,20 +12,21 @@ defineProps<{ articles: Article[] }>()
 </script>
 
 <template>
-  <ul class="grid gap-4 sm:grid-cols-2">
+  <ul class="border-t-2 border-ink">
     <li v-for="(article, index) in articles" :key="article.path" v-reveal="index * 50">
       <a
         :href="article.href"
         target="_blank"
         rel="noopener noreferrer"
-        class="card-brutal card-brutal-hover flex h-full flex-col p-5 hover:bg-accent-emerald/15"
+        class="grid gap-1 border-b-2 border-ink py-5 hover:bg-canvas sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-6"
       >
-        <div class="flex items-baseline gap-2">
-          <h3 class="font-mono text-base font-bold">{{ article.title }}</h3>
-          <span class="ml-auto shrink-0 font-mono text-[11px] uppercase text-ink/65">{{ article.outlet }}</span>
-        </div>
-        <p class="mt-2 text-sm leading-relaxed">{{ article.description }}</p>
-        <span class="mt-auto pt-4 font-mono text-xs font-bold uppercase">Read →</span>
+        <span class="text-base font-semibold underline decoration-2 underline-offset-4">
+          {{ article.title }}
+        </span>
+        <span class="text-xs text-ink/60 sm:text-right">{{ article.outlet }}</span>
+        <span class="text-sm leading-relaxed text-ink/70 sm:col-span-2 sm:max-w-2xl">
+          {{ article.description }}
+        </span>
       </a>
     </li>
   </ul>

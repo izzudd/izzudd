@@ -20,5 +20,3 @@ tools:
   - { name: Python, icon: 'simple-icons:python' }
   - { name: NumPy, icon: 'simple-icons:numpy' }
 ---
-
-<!-- Opsional: paragraf penjelas di bawah daftar item. -->

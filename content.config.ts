@@ -25,7 +25,6 @@ export default defineContentConfig({
         tagline: z.string(),
         location: z.string(),
         availability: z.string(),
-        focus: z.array(z.string()),
         links: z.array(link),
         email: z.string(),
       }),
