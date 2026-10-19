@@ -23,6 +23,9 @@ export default defineNuxtConfig({
     preset: 'static',
     prerender: {
       routes: ['/', '/cv'],
+      // /cv.html instead of /cv/index.html: Cloudflare then serves /cv with no
+      // 307 to /cv/ (redirects in the canonical URL are noisy for a CV link).
+      autoSubfolderIndex: false,
     },
   },
 
