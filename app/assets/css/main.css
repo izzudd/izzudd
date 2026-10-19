@@ -1,0 +1,216 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-ink: #0a0a0a;
+  --color-paper: #e7e5e4;
+  --color-paper-2: #d6d3d1;
+  --color-canvas: #fafaf9;
+
+  --color-accent-amber: #f59e0b;
+  --color-accent-emerald: #10b981;
+  --color-accent-sky: #0ea5e9;
+  --color-accent-lime: #84cc16;
+  --color-accent-fuchsia: #d946ef;
+  --color-accent-orange: #f97316;
+
+  --shadow-brutal: 8px 8px 0 0 var(--color-ink);
+  --shadow-brutal-sm: 4px 4px 0 0 var(--color-ink);
+  --shadow-brutal-lg: 12px 12px 0 0 var(--color-ink);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-accent-lime);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 4px solid var(--color-accent-sky);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .frame {
+    @apply border-4 border-ink;
+  }
+
+  .card-brutal {
+    @apply border-4 border-ink bg-canvas shadow-brutal transition-[transform,box-shadow] duration-150;
+  }
+
+  .card-brutal-hover:hover {
+    @apply -translate-x-1 -translate-y-1 shadow-brutal-lg;
+  }
+
+  .tag {
+    @apply inline-flex items-center border-2 border-ink px-2 py-0.5 font-mono text-xs uppercase tracking-wide;
+  }
+
+  .btn-brutal {
+    @apply inline-flex items-center gap-2 border-4 border-ink bg-canvas px-5 py-3 font-mono text-sm font-bold uppercase tracking-wide shadow-brutal-sm transition-[transform,box-shadow] duration-150;
+  }
+
+  .btn-brutal:hover {
+    @apply -translate-x-0.5 -translate-y-0.5 shadow-brutal;
+  }
+
+  .prose-brutal {
+    @apply text-base leading-relaxed;
+  }
+
+  .prose-brutal :where(p) {
+    @apply mb-4;
+  }
+
+  .prose-brutal :where(ul) {
+    @apply mb-4 list-disc space-y-1 pl-5;
+  }
+
+  .prose-brutal :where(h2, h3) {
+    @apply mt-6 mb-2 font-mono font-bold;
+  }
+
+  .prose-brutal :where(code) {
+    @apply border-2 border-ink bg-paper-2 px-1 font-mono text-sm;
+  }
+
+  .prose-brutal :where(a) {
+    @apply underline decoration-4 underline-offset-2;
+  }
+}
+
+/* Reveal-on-scroll: only client-side, and disabled for reduced motion. */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.35s ease-out,
+    transform 0.35s ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Printing (Ctrl+P / "Save as PDF") must never drop un-revealed content. */
+@media print {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Collapsible sections: <details> + grid-rows animation. */
+.section-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+details[open] > .section-body {
+  grid-template-rows: 1fr;
+}
+
+.section-body > div {
+  overflow: hidden;
+}
+
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-body {
+    transition: none;
+  }
+}
+
+/* Project dialog */
+dialog.project-dialog {
+  padding: 0;
+  border: 4px solid var(--color-ink);
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  max-width: min(46rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  box-shadow: var(--shadow-brutal-lg);
+}
+
+dialog.project-dialog::backdrop {
+  background: rgb(10 10 10 / 0.55);
+  backdrop-filter: blur(2px);
+}
+
+dialog.project-dialog[open] {
+  animation: dialog-in 0.18s ease-out;
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  dialog.project-dialog[open] {
+    animation: none;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .card-brutal,
+  .frame {
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+}

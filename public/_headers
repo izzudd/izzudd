@@ -1,0 +1,9 @@
+# Cloudflare Workers static assets (deploy --assets=.output/public)
+/_nuxt/*
+  cache-control: public, immutable, max-age=31536000
+
+/__nuxt_content/*
+  cache-control: public, max-age=0, must-revalidate
+
+/favicon.svg
+  cache-control: public, max-age=86400

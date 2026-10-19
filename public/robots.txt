@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /cv
+
+Sitemap: https://me.izzudd.my.id/sitemap.xml
