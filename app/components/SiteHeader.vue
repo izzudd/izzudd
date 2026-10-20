@@ -17,30 +17,32 @@ const menuOpen = ref(false)
 
 <template>
   <header class="no-print sticky top-0 z-40 border-b-2 border-ink bg-paper">
-    <div class="mx-auto flex max-w-5xl items-center gap-4 px-4 py-3 sm:px-6">
-      <a href="#top" class="inline-flex min-h-11 items-center text-sm font-bold tracking-[-0.01em]">Daffa Izzuddin</a>
+    <div class="px-4 py-3 sm:px-6">
+      <div class="mx-auto flex max-w-5xl items-center gap-4">
+        <a href="#top" class="inline-flex min-h-11 items-center text-sm font-bold tracking-[-0.01em]">Daffa Izzuddin</a>
 
-      <nav class="ml-auto hidden items-center gap-5 md:flex" aria-label="Sections">
-        <a
-          v-for="item in nav"
-          :key="item.href"
-          :href="item.href"
-          class="text-sm underline-offset-4 hover:underline"
+        <nav class="ml-auto hidden items-center gap-5 md:flex" aria-label="Sections">
+          <a
+            v-for="item in nav"
+            :key="item.href"
+            :href="item.href"
+            class="text-sm underline-offset-4 hover:underline"
+          >
+            {{ item.label }}
+          </a>
+          <a href="/cv" class="btn px-3 py-1.5 text-xs">CV</a>
+        </nav>
+
+        <button
+          type="button"
+          class="ml-auto inline-flex min-h-11 items-center border-2 border-ink bg-canvas px-3 text-xs font-semibold md:hidden"
+          :aria-expanded="menuOpen"
+          aria-controls="mobile-nav"
+          @click="menuOpen = !menuOpen"
         >
-          {{ item.label }}
-        </a>
-        <a href="/cv" class="btn px-3 py-1.5 text-xs">CV</a>
-      </nav>
-
-      <button
-        type="button"
-        class="ml-auto inline-flex min-h-11 items-center border-2 border-ink bg-canvas px-3 text-xs font-semibold md:hidden"
-        :aria-expanded="menuOpen"
-        aria-controls="mobile-nav"
-        @click="menuOpen = !menuOpen"
-      >
-        {{ menuOpen ? 'Close' : 'Menu' }}
-      </button>
+          {{ menuOpen ? 'Close' : 'Menu' }}
+        </button>
+      </div>
     </div>
 
     <nav
