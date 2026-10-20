@@ -217,6 +217,9 @@ details[open] > .section-body {
 
 /* Project dialog */
 dialog.project-dialog {
+  /* Tailwind's preflight zeroes the UA's `margin: auto`, which pins a modal
+     dialog to the top-left corner; restore it so it centres like showModal(). */
+  margin: auto;
   padding: 0;
   border: 2px solid var(--color-ink);
   background: var(--color-canvas);
