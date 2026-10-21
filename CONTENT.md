@@ -98,6 +98,31 @@ The quote itself, as Markdown.
 While the folder contains no `.md` file, the Testimonials section is not rendered at all,
 neither on the site nor in the README.
 
+## Visual editing (Nuxt Studio)
+
+`nuxt-studio` is installed for **local editing only**. Run `bun run dev`, open
+http://localhost:3000 and click **Edit this page** on the floating button at the bottom left.
+The editor writes straight into `content/*.md` on disk; publishing is still a `git commit`.
+
+Each collection gets a form built from `content.config.ts` (the **Settings** tab: title, tagline,
+order, tags, metrics, ...) plus a visual body editor and the raw Markdown (the **Page** tab), and
+`content/public/` gets a media library.
+
+Things worth knowing:
+
+- `$production: { studio: false }` in `nuxt.config.ts` keeps the editor out of the static build.
+  With Studio included, `.output/public` goes from 2.4 MB to 8.8 MB: a 648 kB editor chunk is
+  modulepreloaded into the page. Visitors must never pay for that.
+- Opening a file in Studio rewrites its frontmatter formatting: keys sorted alphabetically, flow
+  arrays expanded to block style, quotes dropped. The content is preserved, so run `git diff`
+  before committing if you care about the churn.
+- The body editor reflows Markdown. A list item whose text was hard-wrapped onto a second line
+  loses that hanging indent, so bullets in `content/` are kept one line each.
+- Editing from the live site (`https://me.izzudd.my.id/_studio`) needs production mode: `studio.dev:
+  false`, a server-rendered Worker (`nuxt build` and a `wrangler` config with `main`), a D1 binding
+  for runtime content queries, and GitHub OAuth credentials
+  (`NUXT_STUDIO_AUTH_GITHUB_CLIENT_ID` / `_SECRET`) stored as Worker secrets. Not enabled yet.
+
 ## Deploy
 
 Static output (`.output/public`) is served by the Cloudflare Worker `izzudd-me`:

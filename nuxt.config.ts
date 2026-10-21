@@ -2,7 +2,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-10-01',
-  modules: ['@nuxt/content', '@nuxt/icon'],
+  modules: ['@nuxt/content', '@nuxt/icon', 'nuxt-studio'],
 
   css: [
     '@fontsource/space-grotesk/400.css',
@@ -39,6 +39,25 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: 'en' },
       viewport: 'width=device-width, initial-scale=1',
       link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    },
+  },
+
+  // Studio is a dev-time tool on this site: a production build that includes it
+  // grows .output/public from 2.5 MB to 8.8 MB (a 648 kB editor chunk is
+  // modulepreloaded into the page), so the static deploy switches it off.
+  $production: {
+    studio: false,
+  },
+
+  // Visual editing on top of Nuxt Content. In dev the floating Studio button
+  // writes straight to content/*.md on disk; publishing stays a git commit.
+  // Production mode (`dev: false`) needs GitHub OAuth secrets — see CONTENT.md.
+  studio: {
+    repository: {
+      provider: 'github',
+      owner: 'izzudd',
+      repo: 'izzudd',
+      branch: 'main',
     },
   },
 
