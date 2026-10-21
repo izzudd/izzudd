@@ -17,7 +17,6 @@ tiles so the result can be inspected on a map instead of a spreadsheet.
 
 ## What I built
 
-- **Pipeline**: tile ingestion, model inference, and geo-referenced output, so each detection keeps
-  its coordinates.
+- **Pipeline**: tile ingestion, model inference, and geo-referenced output, so each detection keeps its coordinates.
 - **API**: FastAPI service that serves predictions per tile.
 - **Interface**: map view where a reviewer can confirm or reject detections.

@@ -25,7 +25,5 @@ The whole path: the generation pipeline, the API that queues and streams results
 that shows progress to the user instead of a spinner that lies.
 
 - **Model**: fine-tuned diffusion on batik imagery, served behind a Python worker.
-- **Serving**: asynchronous job queue with WebSocket progress. Generation takes seconds, so the UI
-  reports stages instead of blocking a request.
-- **Product**: Nuxt frontend with prompt presets, so a first-time user gets a usable result without
-  knowing prompt engineering.
+- **Serving**: asynchronous job queue with WebSocket progress. Generation takes seconds, so the UI reports stages instead of blocking a request.
+- **Product**: Nuxt frontend with prompt presets, so a first-time user gets a usable result without knowing prompt engineering.
