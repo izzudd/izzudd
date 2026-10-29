@@ -42,9 +42,9 @@ Face-embedding authentication exposed as a small, boring REST API.
 
 ### [Quoin](https://quoin.izzudd.my.id)
 
-Seventeen developer utilities that run entirely in the browser: no uploads, no accounts, no telemetry.
+Developer utilities that run entirely in the browser: no uploads, no accounts, no telemetry.
 
-`Tools: 17` · `Payloads uploaded: 0`
+`Payloads uploaded: 0`
 
 <sub>Stack: nuxt, vue, tailwindcss, typescript, bun, cloudflare · [source](https://github.com/izzudd/quoin) · [live](https://quoin.izzudd.my.id)</sub>
 
