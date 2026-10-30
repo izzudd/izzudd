@@ -2,7 +2,6 @@
 
 The site and `README.md` are both generated from the Markdown files in `content/`.
 Nothing is hardcoded in the components: if a section looks empty, the folder is empty.
-Open items live in `content/TODO.md`, which is never rendered.
 
 | I want to change | Edit |
 | --- | --- |

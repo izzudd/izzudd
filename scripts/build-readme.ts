@@ -16,7 +16,7 @@ import { parse as parseYaml } from 'yaml'
 const ROOT = new URL('..', import.meta.url).pathname
 const CONTENT = join(ROOT, 'content')
 const README = join(ROOT, 'README.md')
-const SITE = 'https://me.izzudd.my.id'
+const SITE = 'https://izzudd.my.id'
 
 type Frontmatter = Record<string, any>
 

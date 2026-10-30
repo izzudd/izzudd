@@ -13,7 +13,7 @@ links:
     href: https://www.invasikode.com
   - label: CV
     href: /cv
-email: halo@izzudd.my.id
+email: daffaizzuddin.w@gmail.com
 ---
 
 I am an AI engineer who likes the unglamorous half of machine learning: getting a model out of the

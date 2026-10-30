@@ -6,7 +6,7 @@
 
 `Open to AI engineering roles, remote and full time`
 
-[Portfolio](https://me.izzudd.my.id) · [CV](https://me.izzudd.my.id/cv) · [GitHub](https://github.com/izzudd) · [LinkedIn](https://www.linkedin.com/in/daffa-izzuddin/) · [Writing](https://www.invasikode.com) · [Email](mailto:halo@izzudd.my.id)
+[Portfolio](https://izzudd.my.id) · [CV](https://izzudd.my.id/cv) · [GitHub](https://github.com/izzudd) · [LinkedIn](https://www.linkedin.com/in/daffa-izzuddin/) · [Writing](https://www.invasikode.com) · [Email](mailto:daffaizzuddin.w@gmail.com)
 
 ## What I do
 
