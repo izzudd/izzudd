@@ -24,7 +24,7 @@ Four years in, most of that work sits where ML meets web: image generation for b
 computer vision on satellite imagery, face embeddings for authentication, an autonomous agent that
 sits on top of clinical paperwork, and the Nuxt/Go/Postgres plumbing that makes all of it usable.
 Right now that means leading development at RAINS Corp and building the e-commerce and AI stack at
-Mayfeyr, where the ingestion pipeline I designed syncs the whole catalogue without dropping one.
+Mayfeyr, a multi-brand luxury fashion retailer whose catalogue pipeline I designed and still own.
 
 The research half is not a separate track. My GenBatik work is a first-author paper in IEEE Access
 (Q1), the framework holds registered IP, and I review for the journal now. I also write about the
