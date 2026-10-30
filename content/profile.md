@@ -20,7 +20,13 @@ I am an AI engineer who likes the unglamorous half of machine learning: getting 
 notebook, putting it behind a real endpoint, watching what it does to real users, and then going
 back to improve it.
 
-Most of my work sits where ML meets web: image generation for batik patterns, computer vision on
-satellite imagery, face embeddings for authentication, and the Nuxt/Go/Postgres plumbing that makes
-those usable. I also write about the engineering side at invasikode.com, because explaining a system
-is a good test of whether I actually understand it.
+Four years in, most of that work sits where ML meets web: image generation for batik patterns,
+computer vision on satellite imagery, face embeddings for authentication, an autonomous agent that
+sits on top of clinical paperwork, and the Nuxt/Go/Postgres plumbing that makes all of it usable.
+Right now that means leading development at RAINS Corp and building the e-commerce and AI stack at
+Mayfeyr, where the ingestion pipeline I designed syncs the whole catalogue without dropping one.
+
+The research half is not a separate track. My GenBatik work is a first-author paper in IEEE Access
+(Q1), the framework holds registered IP, and I review for the journal now. I also write about the
+engineering side at invasikode.com, because explaining a system is a good test of whether I actually
+understand it.

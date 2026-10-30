@@ -16,21 +16,25 @@
 
 | Role | Company | Period | Type |
 | --- | --- | --- | --- |
-| Tech Lead | Rains | Present | Remote · Full-time |
-| Founding Developer | Mayfeyr | Present | Remote · Founding team |
-| B.Sc. Computer Science | Universitas Brawijaya |  | Education |
+| Lead Developer | [RAINS Corp](https://rainscorp.id) | 2026-07 to present | Remote · Full-time |
+| Full-Stack AI Engineer | Mayfeyr | 2024-12 to present | Remote · Founding team |
+| B.Sc. Computer Science | Universitas Brawijaya | 2021 to 2025 | Education |
 
 ## Selected projects
 
-### [GenBatik](https://batik.izzudd.my.id)
+### [GenBatik](https://genbatik.ub.ac.id)
 
-Text-to-image generation for batik patterns: a diffusion model wrapped in a real product.
+Text-to-image generation for batik patterns: a diffusion model wrapped in a real product, and a paper about it.
 
-<sub>Stack: python, pytorch, huggingface, nuxt, websocket · [live](https://batik.izzudd.my.id)</sub>
+`Batik patterns generated: 60K+` · `Dropped requests: 0%`
+
+<sub>Stack: python, pytorch, huggingface, nuxt, websocket · [source](https://github.com/izzudd/gen-batik) · [live](https://genbatik.ub.ac.id)</sub>
 
 ### **SPARSE**
 
 Solar panel detection on satellite imagery, from model to a GIS interface.
+
+`Test F1 (MaxViT-B): 0.6459`
 
 <sub>Stack: python, pytorch, fastapi, vue, leaflet, docker</sub>
 

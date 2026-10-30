@@ -14,6 +14,10 @@ items:
     evidenceHref: '#project-tatakata'
   - name: Cost and usage tracking per feature
   - name: Versioned experiments instead of one-off notebooks
+  - name: Success rate and latency targets measured, not assumed
+    evidence: Rains, 92% query success
+  - name: CI/CD to staging as the daily default, not a release event
+    evidence: Rains
 tools:
   - { name: Postgres, icon: 'simple-icons:postgresql' }
   - { name: Grafana, icon: 'simple-icons:grafana' }

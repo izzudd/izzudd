@@ -8,6 +8,10 @@ items:
     evidence: GenBatik, invasikode.com
     evidenceHref: '#project-genbatik'
   - name: API design and schema work in Postgres
+  - name: AI features wired into an existing commerce stack
+    evidence: Mayfeyr Mirror, custom GPT apps
+  - name: Multi-server infrastructure and technical SEO/GEO
+    evidence: Mayfeyr
   - name: Static-first builds, prerender, and deploy pipelines
     evidence: Portfolio (this site)
   - name: Technical writing that explains a system to non-authors

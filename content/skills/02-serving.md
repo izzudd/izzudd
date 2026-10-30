@@ -14,8 +14,13 @@ items:
     evidence: SPARSE
     evidenceHref: '#project-sparse'
   - name: Latency and cost per request
-    evidence: GenBatik
+    evidence: GenBatik, Mayfeyr
     evidenceHref: '#project-genbatik'
+  - name: Message queues and retry policies that survive supplier failures
+  - name: Batch loading to cut per-product work (DataLoader, 100ms to 10ms)
+    evidence: Mayfeyr
+  - name: Microservice extraction when one module gets hot
+    evidence: Mayfeyr
 tools:
   - { name: FastAPI, icon: 'simple-icons:fastapi' }
   - { name: Go, icon: 'simple-icons:go' }
