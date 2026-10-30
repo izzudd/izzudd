@@ -16,8 +16,8 @@
 
 | Role | Company | Period | Type |
 | --- | --- | --- | --- |
-| Lead Developer | [RAINS Corp](https://rainscorp.id) | 2026-07 to present | Remote · Full-time |
-| Full-Stack AI Engineer | Mayfeyr | 2024-12 to present | Remote · Founding team |
+| Lead Developer | [RAINS Corp](https://rainscorp.id) | 2026-07 to present | Remote · Founding team |
+| Full-Stack AI Engineer | Mayfeyr | 2024-12 to present | Remote · Full-time |
 | B.Sc. Computer Science | Universitas Brawijaya | 2021 to 2025 | Education |
 
 ## Selected projects

@@ -4,7 +4,7 @@ company: RAINS Corp
 companyUrl: 'https://rainscorp.id'
 period: 2026-07 to present
 start: '2026-07-01'
-type: Remote · Full-time
+type: Remote · Founding team
 location: Remote
 current: true
 summary: An autonomous AI agent that runs alongside clinical and administrative staff and writes the activity reports they would otherwise write by hand.

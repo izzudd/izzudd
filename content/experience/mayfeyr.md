@@ -3,7 +3,7 @@ role: Full-Stack AI Engineer
 company: Mayfeyr
 period: 2024-12 to present
 start: '2024-12-01'
-type: Remote · Founding team
+type: Remote · Full-time
 location: Remote
 current: true
 summary: Catalogue ingestion, pricing, storefront content, and the AI features on top of them for a D2C clothing brand.
