@@ -41,3 +41,5 @@ position: every tool is a pure function in the browser, and the data never leave
 No analytics, no cookies, no third-party requests. State lives in page memory or `localStorage` and
 never on a server. Keeping the tools pure functions means privacy is a property of the architecture
 rather than a promise in a policy page.
+
+I wrote the story behind it on dev.to: [I built the dev tools I was tired of looking for](https://dev.to/izzudd/i-built-the-dev-tools-i-was-tired-of-looking-for-2ejh).

@@ -54,6 +54,7 @@ Developer utilities that run entirely in the browser: no uploads, no accounts, n
 
 ## Writing
 
+- [I built the dev tools I was tired of looking for](https://dev.to/izzudd/i-built-the-dev-tools-i-was-tired-of-looking-for-2ejh) · dev.to
 - [React, Vue, Angular, what to Decide?](https://www.invasikode.com/react-angular-vue-pilih-framework-yang-mana) · Invasikode
 - [What's Up Javascript? SoJS 2022](https://www.invasikode.com/apa-kabar-javascript-rilis-state-of-js-2022) · Invasikode
 - [Guide: Using Node and Express with TypeScript](https://www.invasikode.com/menggunakan-typescript-dengan-node-js-dan-express) · Invasikode
