@@ -47,7 +47,7 @@ useHead({
             <span class="tech ml-auto text-xs">{{ entry.period }}</span>
           </div>
           <p class="text-xs text-ink/60">
-            {{ [entry.type, entry.location].filter((v: string, i: number, a: string[]) => a.indexOf(v) === i).join(' · ') }}
+            {{ [entry.type, entry.location].filter((v: string, i: number, a: string[]) => v && !a.some((o: string, j: number) => j !== i && o.toLowerCase().includes(v.toLowerCase()))).join(' · ') }}
           </p>
           <p v-if="entry.summary" class="mt-1 text-sm leading-relaxed">{{ entry.summary }}</p>
           <ul v-if="entry.highlights?.length" class="mt-1 list-disc space-y-0.5 pl-5 text-sm leading-relaxed">
