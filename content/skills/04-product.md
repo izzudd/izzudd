@@ -17,6 +17,10 @@ items:
   - name: Technical writing that explains a system to non-authors
     evidence: invasikode.com
     evidenceHref: 'https://www.invasikode.com'
+  - name: Demoing a working system to investors, and partner conversations for pilots
+    evidence: Rains
+  - name: Running sprint planning and team sync sessions
+    evidence: Rains
 tools:
   - { name: Nuxt, icon: 'simple-icons:nuxt' }
   - { name: TypeScript, icon: 'simple-icons:typescript' }

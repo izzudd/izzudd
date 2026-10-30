@@ -9,9 +9,10 @@ location: Remote
 current: true
 summary: An autonomous AI agent that runs alongside clinical and administrative staff and writes the activity reports they would otherwise write by hand.
 highlights:
-  - 'Architected and deployed the shadow agent pilot now running with 8 clinical and administrative staff: 3 physicians, 3 healthcare workers, 2 front-office.'
+  - Architected and deployed an autonomous shadow agent that now runs alongside clinical and administrative staff, across physician, healthcare worker and front-office roles.
   - Built the inter-agent query routing that holds a 92% query success rate, and I am benchmarking latency against a sub-5s target.
   - Lead a squad of 2 engineers, ship to staging through CI/CD every day, and steer sprints toward 70%+ milestone completion.
+  - Own the outward-facing half of the job too: demo the agent to investors, run the weekly sync and sprint sessions, and open pilot conversations with partner organisations.
   - Shipped the production platform at rainscorp.id and the custom GPT apps that give the agent a natural-language front door.
 stack: [python, typescript, nuxt, postgresql, docker]
 ---
