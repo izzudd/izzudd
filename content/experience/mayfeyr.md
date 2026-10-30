@@ -6,7 +6,7 @@ start: '2024-12-01'
 type: Remote · Full-time
 location: Remote
 current: true
-summary: Catalogue ingestion, pricing, storefront content, and the AI features on top of them for a D2C clothing brand.
+summary: Catalogue ingestion, pricing, storefront content, and the AI features on top of them for a multi-brand luxury fashion retailer.
 highlights:
   - 'Rebuilt catalogue ingestion as a distributed pipeline in Python and RabbitMQ: daily stock and price syncs, storefront product pages generated, and onboarding a large supplier catalogue without losing work.'
   - Integrated external supplier APIs behind strict retry queues and kept sync failures out of the storefront, which is the difference between a stale price and a negative-margin order.
